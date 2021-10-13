@@ -1,23 +1,32 @@
 import { Fragment } from "react";
+import { useState } from "react";
+
 
 const MainListTodo = () => {
+    const initialtodos = [
+      { title : "My first todo", check : false },
+      { title : "My second todo", check : true },
+    ];
+  
+    const [todos, setTodos] = useState(initialtodos);
+    
+     
     return (  
         <Fragment>
+         {todos.map((todo) => (
       <div className="form-check">
-          <input type="checkbox" className="form-check-input" value="" id="flexCheckDefault" />
+      
+      <input type="checkbox" className="form-check-input" value="" id="flexCheckDefault" checked={ todo.check } />
           <label className="form-check-label" for="flexCheckDefault">
-            Learn React
+          { todo.title }
           </label>
+         
       </div>
-      <div className="form-check">
-      <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-        <label className="form-check-label" for="flexCheckChecked">
-        Be awesome !
-        </label>
-      </div>
+       ))}
       </Fragment>
       
     );
+        
 }
  
 export default MainListTodo;
