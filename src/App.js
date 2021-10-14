@@ -1,6 +1,6 @@
-import MainAddTodo from './MainAddTodo';
-import Navbar from './Navbar';
-import MainListTodo from './MainListTodo';
+import MainAddTodo from './components/MainAddTodo';
+import Navbar from './components/Navbar';
+import MainListTodo from './components/MainListTodo';
 
 
 function App() {

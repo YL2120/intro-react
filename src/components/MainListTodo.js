@@ -1,11 +1,13 @@
 import { Fragment } from "react";
 import { useState } from "react";
+import Checkbox from "./Checkbox";
 
 
 const MainListTodo = () => {
     const initialtodos = [
-      { title : "My first todo", check : false },
-      { title : "My second todo", check : true },
+      { key : 1, title : "My first todo", check : false },
+      { key : 2, title : "My second todo", check : true },
+      
     ];
   
     const [todos, setTodos] = useState(initialtodos);
@@ -14,10 +16,10 @@ const MainListTodo = () => {
     return (  
         <Fragment>
          {todos.map((todo) => (
-      <div className="form-check">
+      <div className="form-check" key={todo.key}>
       
-      <input type="checkbox" className="form-check-input" value="" id="flexCheckDefault" checked={ todo.check } />
-          <label className="form-check-label" for="flexCheckDefault">
+          <Checkbox checks={todo.check}/>
+          <label  className="form-check-label" for="flexCheckDefault">
           { todo.title }
           </label>
          
